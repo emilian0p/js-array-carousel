@@ -7,6 +7,29 @@ const images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
 
-    const imgContainer = document.getElementById('img-container');
-    const dotContainer = document.getElementById('2nd-img-container');
+const imagesWrapper = document.querySelector('#img-container');
+console.log(imagesWrapper)
+
+let activeImage = 0;
+
+for (let index = 0 ; index < images.length ; index++){
     
+    const currentImage = document.createElement('img')
+ 
+    currentImage.setAttribute('src', images[index]);
+
+    if (index == activeImage){
+
+        currentImage.classList.add('active');
+        
+    }
+
+    imagesWrapper.append(currentImage);
+    
+}
+
+const prevButton = document.getElementById('prev-button');
+
+const nextButton = document.getElementById('next-button');
+
+const imageElements = document.querySelectorAll('.justify-content-between img');
